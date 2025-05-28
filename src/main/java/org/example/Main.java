@@ -3,6 +3,8 @@ package org.example;
 import org.example.DAO.ComputerDAO;
 import org.example.entity.Computer;
 import org.example.entity.Identification;
+import org.example.entity.OperatingSystem;
+import org.example.entity.Processor;
 import org.example.service.ComputerService;
 
 import javax.persistence.EntityManager;
@@ -18,6 +20,10 @@ public class Main {
         ComputerDAO dao = new ComputerDAO();
 
         Computer computer = Computer.builder().name("model1").identificationComputer(new Identification("127.0.0.1")).build();
+
+        Processor processor = Processor.builder().processorName("xxx").build();
+
+        OperatingSystem operatingSystem = OperatingSystem.builder().operatingSystemName("xxx").build();
 
 
 //        EntityManagerFactory emf = Persistence.createEntityManagerFactory("demo_jpa");
