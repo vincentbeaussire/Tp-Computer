@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.DAO.ComputerDAO;
 import org.example.entity.Computer;
 import org.example.entity.Identification;
 import org.example.service.ComputerService;
@@ -14,9 +15,10 @@ import javax.persistence.Persistence;
 public class Main {
     public static void main(String[] args) {
 
-        ComputerService computerService = new ComputerService();
+        ComputerDAO dao = new ComputerDAO();
 
-        computerService.create("macAdress", "0123456789");
+        Computer computer = Computer.builder().name("model1").identificationComputer(new Identification("127.0.0.1")).build();
+
 
 //        EntityManagerFactory emf = Persistence.createEntityManagerFactory("demo_jpa");
 //        EntityManager em = emf.createEntityManager();

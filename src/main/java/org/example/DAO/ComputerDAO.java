@@ -1,6 +1,7 @@
 package org.example.DAO;
 
 import org.example.entity.Computer;
+import org.example.entity.Identification;
 import org.example.util.DatabaseManager;
 
 import javax.persistence.EntityManager;
@@ -28,15 +29,15 @@ public class ComputerDAO {
         return query.getResultList();
     }
 
-    public List<Computer> updateComputerByName(String name) {
-        TypedQuery<Computer> query = em.createNamedQuery("select c from Computer c where c.name = :name", Computer.class);
-        query.setParameter("name",name);
+    public List<Computer> updateComputerById(int id) {
+        TypedQuery<Computer> query = em.createNamedQuery("select c from Computer c where c.id = :id", Computer.class);
+        query.setParameter("id", id);
         return query.getResultList();
     }
 
-    public List<Computer> deleteComputerByName(String name) {
-        TypedQuery<Computer> query = em.createNamedQuery("select c from Computer c where c.name = :name", Computer.class);
-        query.setParameter("name",name);
+    public List<Computer> deleteComputerById(int id) {
+        TypedQuery<Computer> query = em.createNamedQuery("select c from Computer c where c.id = :id", Computer.class);
+        query.setParameter("id",id);
         return query.getResultList();
     }
 }

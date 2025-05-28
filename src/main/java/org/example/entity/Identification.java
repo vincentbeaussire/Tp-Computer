@@ -23,6 +23,9 @@ public class Identification {
     @OneToOne(mappedBy = "identificationComputer")
     private Computer computer;
 
+    public Identification(String s) {
+    }
+
     @Override
     public String toString() {
         return "Identification{" +
