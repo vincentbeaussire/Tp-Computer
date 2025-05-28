@@ -21,9 +21,11 @@ public class Main {
 
         Computer computer = Computer.builder().name("model1").identificationComputer(new Identification("127.0.0.1")).build();
 
-        Processor processor = Processor.builder().processorName("xxx").build();
+        Processor processor = Processor.builder().processorName("XXX").build();
 
-        OperatingSystem operatingSystem = OperatingSystem.builder().operatingSystemName("xxx").build();
+        OperatingSystem operatingSystem = OperatingSystem.builder().operatingSystemName("YYY").build();
+
+        System.out.println(dao.getAll());
 
 
 //        EntityManagerFactory emf = Persistence.createEntityManagerFactory("demo_jpa");

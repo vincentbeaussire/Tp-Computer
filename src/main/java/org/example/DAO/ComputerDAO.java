@@ -23,6 +23,10 @@ public class ComputerDAO {
         return computer;
     }
 
+    public List<Computer> getAll (){
+        return em.createQuery("Select c from Computer c ", Computer.class).getResultList();
+    }
+
     public List<Computer> getComputerByName(String name) {
         TypedQuery<Computer> query = em.createNamedQuery("select c from Computer c where c.name = :name", Computer.class);
         query.setParameter("name",name);
