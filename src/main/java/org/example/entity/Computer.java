@@ -1,12 +1,12 @@
 package org.example.entity;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,7 +20,15 @@ public class Computer {
 
     private String name;
 
-    @OneToOne
-    @JoinColumn(name = "idComputer")
-    private Identification identificationComputer;
+//    @OneToOne
+//    @JoinColumn(name = "idComputer")
+//    private Identification identificationComputer;
+
+
+    @ManyToMany
+    @JoinTable(name = "project_computer",
+    joinColumns = @JoinColumn(name = "computerId"),
+    inverseJoinColumns = @JoinColumn(name = "computerId"))
+
+    private List<Computer> computers;
 }
